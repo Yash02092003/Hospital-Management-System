@@ -26,7 +26,7 @@ let doctorSchema = new Schema({
     ] ,
     patientList : [{
         type : mongoose.Schema.Types.ObjectId ,
-        ref : 'Patient'
+        ref : 'patient'
     }] ,
     appointmentList : [{
         time : {
@@ -35,11 +35,15 @@ let doctorSchema = new Schema({
         } ,
         patient : {
             type : mongoose.Schema.Types.ObjectId ,
-            ref : 'Patient'
+            ref : 'patient'
         }
-    }]
-})
+    }],
+    qualification:{
+        type:String,
+        required:true,
+    }
+} , {timestamps:true})
 
-const Doctor = model('doctor' , doctorSchema);
+const doctor = model('doctor' , doctorSchema);
 
-module.exports = Doctor;
+module.exports = doctor;
