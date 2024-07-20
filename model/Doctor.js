@@ -21,7 +21,8 @@ let doctorSchema = new Schema({
             } ,
             comment : {
                 type : String ,
-            }
+            } , 
+            default : []
         }
     ] ,
     patientList : [{

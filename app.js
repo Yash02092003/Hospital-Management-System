@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 const exp = require('constants');
+=======
+>>>>>>> e3d362a18a77efa849f1a9fbca67e17035e08144
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -19,6 +22,7 @@ app.set('views' , path.join(__dirname , 'views'));
 app.use(express.static(path.join(__dirname , 'public')));
 
 
+<<<<<<< HEAD
 
 // seedDoctor();
 // seedPatient();
@@ -31,6 +35,18 @@ app.get('/' , (req , res) => {
 
 
 
+=======
+// seedDoctor();
+// seedPatient();
+
+
+
+app.get('/' , (req , res)=>{
+    res.send("Hello From Root Route");
+})
+
+
+>>>>>>> e3d362a18a77efa849f1a9fbca67e17035e08144
 app.listen(PORT , () => {
     console.log(`Server Connected At PORT : ${PORT}`);
 })
