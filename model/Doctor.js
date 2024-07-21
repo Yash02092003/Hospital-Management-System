@@ -38,7 +38,11 @@ let doctorSchema = new Schema({
             type : mongoose.Schema.Types.ObjectId ,
             ref : 'Patient'
         }
-    }]
+    }] , 
+    role : {
+        type : String ,
+        required : true
+    }
 })
 
 const Doctor = model('doctor' , doctorSchema);
