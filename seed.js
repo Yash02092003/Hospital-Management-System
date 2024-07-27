@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Doctor = require('./model/Doctor');
-const Patient = require('./model/Patient');
+// const Doctor = require('./model/Doctor');
+// const Patient = require('./model/Patient');
 
 const patientsData = [
     {
