@@ -1,6 +1,7 @@
 const { required } = require('joi');
 const mongoose = require('mongoose');
 const {Schema , model} = mongoose;
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const patientSchema = new Schema({
     name : {
@@ -21,6 +22,8 @@ const patientSchema = new Schema({
         required : true
     }
 })
+
+patientSchema.plugin(passportLocalMongoose);
 
 const Patient = model('patient' , patientSchema);
 

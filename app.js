@@ -23,6 +23,8 @@ app.set('view engine' , 'ejs');
 app.set('views' , path.join(__dirname , 'views'));
 app.use(express.static(path.join(__dirname , 'public')));
 
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
 app.use(session({
     secret: 'mylittlesecret',
     resave: false,
@@ -64,6 +66,13 @@ app.get('/' , (req , res)=>{
     res.render('index');
 })
 
+app.get('/login' , (req , res)=>{
+    res.render('login');
+})
+
+app.get('/register' , (req , res)=> {
+    res.render('register');
+})
 
 app.listen(PORT , () => {
     console.log(`Server Connected At PORT : ${PORT}`);
