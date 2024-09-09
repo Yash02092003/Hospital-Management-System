@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const {Schema , model} = mongoose;
+const passportLocalMongoose = require('passport-local-mongoose');
+
 
 let doctorSchema = new Schema({
     name : {
@@ -21,7 +23,8 @@ let doctorSchema = new Schema({
             } ,
             comment : {
                 type : String ,
-            }
+            } , 
+            default : []
         }
     ] ,
     patientList : [{
@@ -37,6 +40,7 @@ let doctorSchema = new Schema({
             type : mongoose.Schema.Types.ObjectId ,
             ref : 'patient'
         }
+<<<<<<< HEAD:model/doctor.models.js
     }],
     qualification:{
         type:String,
@@ -47,3 +51,19 @@ let doctorSchema = new Schema({
 const doctor = model('doctor' , doctorSchema);
 
 module.exports = doctor;
+=======
+    }] , 
+    role : {
+        type : String ,
+        required : true
+    }
+})
+
+
+doctorSchema.plugin(passportLocalMongoose);
+
+const Doctor = model('doctor' , doctorSchema);
+
+
+module.exports = Doctor;
+>>>>>>> 6769e48ae6eb5563d8d75593b94359ba028687c3:model/Doctor.js
