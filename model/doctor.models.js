@@ -29,7 +29,7 @@ let doctorSchema = new Schema({
     ] ,
     patientList : [{
         type : mongoose.Schema.Types.ObjectId ,
-        ref : 'Patient'
+        ref : 'patient'
     }] ,
     appointmentList : [{
         time : {
@@ -38,8 +38,20 @@ let doctorSchema = new Schema({
         } ,
         patient : {
             type : mongoose.Schema.Types.ObjectId ,
-            ref : 'Patient'
+            ref : 'patient'
         }
+<<<<<<< HEAD:model/doctor.models.js
+    }],
+    qualification:{
+        type:String,
+        required:true,
+    }
+} , {timestamps:true})
+
+const doctor = model('doctor' , doctorSchema);
+
+module.exports = doctor;
+=======
     }] , 
     role : {
         type : String ,
@@ -54,3 +66,4 @@ const Doctor = model('doctor' , doctorSchema);
 
 
 module.exports = Doctor;
+>>>>>>> 6769e48ae6eb5563d8d75593b94359ba028687c3:model/Doctor.js
